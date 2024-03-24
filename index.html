@@ -1,116 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <title>Floki Maderas</title>
-    <link rel="stylesheet" href="./style/bootstrap.min.css">
-    <link rel="shortcut icon" href="/img/favicon.jpg">
-  </head>
-  <body>
-    <header class="bg-black" data-bs-theme="dark">
-      <nav class="navbar navbar-expand-lg">
-        <form class="d-flex " role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 d-flex justify-content-end align-items-center" >
-            <li class="nav-item"></li>
-              <img src="/img/humano.png" alt="icono usuario" width="20" height="20">
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Iniciar Sesión</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Registrarse</a>
-            </li>
-          </ul>
-      </div>
-    </div>
-      </nav>
-    </header>
-
-      
-    <section class="section-index">
-      <br>
-      <h2>Productos en madera</h2>
-      <div class="productos">
-        <!-- <a class="prev">&#10094;</a> -->
-        <img src="/img/velador.png" alt="velador">
-        <img src="/img/baselatas.png" alt="baseLatas">
-        <img src="/img/veladerled.png" alt="velador">
-      </div>
-        <!-- <a class="prev">&#10095;</a> -->
-      <div class="img-dot-container">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-      <h2>Grabados Láser</h2>
-      <div class="productos">
-        <!-- <a class="prev">&#10094;</a> -->
-        <img src="/img/destapador.png" alt="destapador">
-        <img src="/img/grabadodestapador.png" alt="baseLatas">
-        <img src="/img/grabadolaser2.png" alt="grabados laser">
-      </div> 
-        <!-- <a class="prev">&#10095;</a> -->
-          <div class="img-dot-container">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      <h2>Muebles</h2>
-      <div class="productos">
-        <!-- <a class="prev">&#10094;</a> -->
-        <img src="/img/escritoriorebatible.png" alt="escritorio">
-        <img src="/img/mesadeluz.png" alt="baseLatas">
-        <img src="/img/mesaratona.png" alt="mesa ratona">
-        <!-- <a class="prev">&#10095;</a> -->
-        </div>
-        <div class="img-dot-container">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-    </section>
-
-    <footer>
-        <div class="categoria">
-          <ul>
-            <li>Categorias</li>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="/pages/producto.html">Productos</a></li>
-            <li><a href="/pages/grabadoslaser.html">Grabados Láser</a></li>
-            <li><a href="/pages/mayorista.html">Mayorista</a></li>
-            <li><a href="/pages/contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="qr">
-          <img src="/img/qr.png" alt="qr" width="150" height="150">
-        </div>
-        <div class="contactanos">
-            <div>
-                <ul>
-                    <li>Contactanos</li>
-                    <li>WhatsApp: 116134567</li>
-                    <li><a href="mailto:floki.disenoenmadera@gmail.com">floki.disenoenmadera@gmail.com</a></li>
-                    <li>Avellaneda - Buenos Aires</li>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="/style/style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&display=swap" rel="stylesheet">
+      <title>Floki Maderas</title>
+      <link rel="stylesheet" href="/style/bootstrap.min.css">
+      <script src="https://kit.fontawesome.com/95d16ae2c4.js" crossorigin="anonymous"></script>
+      <link rel="shortcut icon" href="/img/favicon.jpg">
+   </head>
+   <body>
+      <header>
+        <nav data-bs-theme="dark" class="navbar navbar-expand-lg  bg-black mb-2" >
+          <div class="container-fluid">
+             <a href="/index.html">
+             <img src="/img/photo-navbar.png" alt="Imagen Logo Floki" width="80" height="40">
+             </a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                   </li>
+                   <li class="nav-item"></li>
+                   <li class="nav-item dropdown"><li>
+                      <hr class="dropdown-divider">
+                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                   <ul class="dropdown-menu">
+                      <li><a class="dropdown-item " href="/pages/producto.html">Productos en Madera</a></li>
+                      <li><a class="dropdown-item " href="/pages/grabadoslaser.html">Grabados Láser</a></li>
+                      <li><a class="dropdown-item" href="/pages/mayorista.html">Mayorista</a></li>
+                      <li>
+                         <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="/pages/contacto.html">Contacto</a></li>
+                   </ul>
+                   <li>
+                      <hr class="collapse-divider text-white">
+                   </li>
                 </ul>
+                <form class="d-flex pe-3" role="search">
+                   <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search">
+                   <button class="btn btn-light" type="submit">Buscar</button>
+                </form>
+                <ul class="navbar-nav">
+                   <li>
+                      <hr class="collapse-divider text-white">
+                   </li>
+                   <li class="nav-item align-items-center">
+                      <a class="nav-link" href="/pages/login.html">Iniciar Sesión</a>
+                   </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="/pages/signup.html">Registarse</a>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </nav>
+      </header>
+      <main>
+         <h1 class="text-center border-dark border-top border-bottom">Productos</h1>
+         <div class="card-group border-0">
+            <div class="card m-5 border-0">
+               <img src="/img/velador.png" class="card-img-top rounded" alt="velador">
+               <div class="card-body">
+                  <h5 class="card-title">Velador</h5>
+                  <!-- <p class="card-text">✨ Pintado con barniz poliuretánico.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
             </div>
-            <div class="icon-footer">
-                <img src="/img/facebook.png" alt="facebook" width="40" height="40">
-                <img src="/img/youtube.png" alt="youtube" width="40" height="40">
-                <img src="/img/instagram.png" alt="instagram" width="40" height="40">
-            </div>      
-        </div>
-    </footer>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-  </body>
+            <div class="card p-5 border-0">
+               <img src="/img/baselatas.png" class="card-img-top rounded" alt="basedelatas">
+               <div class="card-body">
+                  <h5 class="card-title">Base Latas</h5>
+                  <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+            <div class="card p-5 border-0">
+               <img src="/img/veladerled.png" class="card-img-top rounded" alt="veladorled">
+               <div class="card-body">
+                  <h5 class="card-title">Velador Led</h5>
+                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+         </div>
+         <h1 class="text-center border-dark border-top border-bottom">Grabados Laser</h1>
+         <div class="card-group border border-0">
+            <div class="card p-5 border-0">
+               <img src="/img/destapador.png" class="card-img-top rounded" alt="destapador">
+               <div class="card-body">
+                  <h5 class="card-title">Grabado Ubicación</h5>
+                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+            <div class="card p-5 border-0">
+               <img src="/img/grabadodestapador.png" class="card-img-top rounded" alt="grabadolaser">
+               <div class="card-body">
+                  <h5 class="card-title">Grabados Laser</h5>
+                  <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+            <div class="card p-5 border-0">
+               <img src="/img/grabadolaser2.png" class="card-img-top rounded" alt="grabadolaser2">
+               <div class="card-body">
+                  <h5 class="card-title">Grabados Laser</h5>
+                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+         </div>
+         <h1 class="text-center border-dark border-top border-bottom">Muebles</h1>
+         <div class="card-group border border-0">
+            <div class="card p-5 border-0">
+               <img src="/img/escritoriorebatible.png" class="card-img-top rounded" alt="escritorio">
+               <div class="card-body">
+                  <h5 class="card-title">Escritorio Rebatible</h5>
+                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+            <div class="card p-5 border-0">
+               <img src="/img/mesadeluz.png" class="card-img-top rounded" alt="mesadeluz">
+               <div class="card-body">
+                  <h5 class="card-title">Mesa de Luz</h5>
+                  <!-- <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+            <div class="card p-5 border-0">
+               <img src="/img/mesaratona.png" class="card-img-top rounded" alt="mesaratona">
+               <div class="card-body">
+                  <h5 class="card-title">Mesa ratona Rebatible</h5>
+                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> -->
+                  <small class="text-body-secondary">Precio: $300</small>
+               </div>
+            </div>
+         </div>
+      </main>
+      <footer>
+         <div class="container-fluid bg-black pt-3" data-bs-theme="dark">
+            <div class="row deco">
+               <div class="col-xl-4 text-center">
+                  <ul class="list-group-flush text-white">
+                     <li class="list-group-item">Categorias</li>
+                     <li class="list-group-item"><a href="../index.html">Inicio</a></li>
+                     <li class="list-group-item"><a href="/pages/producto.html">Productos</a></li>
+                     <li class="list-group-item"><a href="/pages/grabadoslaser.html">Grabados Láser</a></li>
+                     <li class="list-group-item"><a href="/pages/mayorista.html">Mayorista</a></li>
+                     <li class="list-group-item"><a href="/pages/contacto.html">Contacto</a></li>
+                  </ul>
+               </div>
+               <div class="col-xl-4 text-center ps-5">
+                  <img class="rounded-4" src="/img/qr.png" alt="qr" width="150" height="150">
+               </div>
+               <div class="col-xl-4">
+                  <ul class="list-group-flush text-white text-center pt-2">
+                     <li class="list-group-item">Contactanos</li>
+                     <li class="list-group-item"><a>WhatsApp: 116134567</a></li>
+                     <li class="list-group-item"><a href="mailto:floki.diseno@gmail.com">floki.diseno@gmail.com</a></li>
+                     <li class="list-group-item"><a>Avellaneda - Buenos Aires</a></li>
+                  </ul>
+                  <div class="d-flex justify-content-center mb-5">
+                     <a href="#"><i class="fa-brands fa-twitter ms-5"></i></a>
+                     <a href="#"><i class="fa-brands fa-instagram ms-2"></i></a>
+                     <a href="#"><i class="fa-brands fa-youtube ms-2"></i></a>
+                     <a href="#"><i class="fa-brands fa-twitch ms-2"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="./js/bootstrap.bundle.min.js"></script>
+   </body>
 </html>
