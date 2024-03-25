@@ -71,9 +71,15 @@
                         <label for="form_email">Email</label>
                         <input id="form_email" type="text" name="name" class="form-control" placeholder="Email">
                      </div>
-                     <div class="form-group pt-3 pb-1">
-                        <label for="form_pass">Contraseña</label>
-                        <input id="form_pass" type="password" name="pass" class="form-control" placeholder="Contraseña">
+                     <div class="form-group pt-3 pb-5">
+                        <label class="form-password">Contraseña</label>
+                        <div class="input-group mb-3">
+                           <input class="form-control" id="password" type="password" name="password" placeholder="Contraseña"/>
+                           <span class="input-group-text">
+                           <i class="far fa-eye-slash" id="togglePassword"
+                              style="cursor: pointer"></i>
+                           </span>
+                        </div>
                         <div id="passwordHelpBlock" class="form-text text-end pb-1">
                            <a href="">Olvidaste tu contraseña?</a>
                            <hr/>

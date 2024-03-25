@@ -45,4 +45,8 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: black;
     border-radius: 100px;
-  }
+}
+
+label{
+    margin-left: 2%;
+}
