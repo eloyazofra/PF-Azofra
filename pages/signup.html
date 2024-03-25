@@ -12,54 +12,55 @@
    </head>
    <body>
       <header>
-        <nav data-bs-theme="dark" class="navbar navbar-expand-lg  bg-black mb-2" >
-          <div class="container-fluid">
-             <a href="/index.html">
-             <img src="/img/photo-navbar.png" alt="Imagen Logo Floki" width="80" height="40">
-             </a>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
-                   </li>
-                   <li class="nav-item"></li>
-                   <li class="nav-item dropdown"><li>
-                      <hr class="dropdown-divider">
-                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
-                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item " href="/pages/producto.html">Productos en Madera</a></li>
-                      <li><a class="dropdown-item " href="/pages/grabadoslaser.html">Grabados Láser</a></li>
-                      <li><a class="dropdown-item" href="/pages/mayorista.html">Mayorista</a></li>
-                      <li>
-                         <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="/pages/contacto.html">Contacto</a></li>
-                   </ul>
-                   <li>
-                      <hr class="collapse-divider text-white">
-                   </li>
-                </ul>
-                <form class="d-flex pe-3" role="search">
-                   <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search">
-                   <button class="btn btn-light" type="submit">Buscar</button>
-                </form>
-                <ul class="navbar-nav">
-                   <li>
-                      <hr class="collapse-divider text-white">
-                   </li>
-                   <li class="nav-item align-items-center">
-                      <a class="nav-link" href="/pages/login.html">Iniciar Sesión</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="/pages/signup.html">Registarse</a>
-                   </li>
-                </ul>
-             </div>
-          </div>
-       </nav>
+         <nav data-bs-theme="dark" class="navbar navbar-expand-lg  bg-black mb-2" >
+            <div class="container-fluid">
+               <a href="/index.html">
+               <img src="/img/photo-navbar.png" alt="Imagen Logo Floki" width="80" height="40">
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                     </li>
+                     <li class="nav-item"></li>
+                     <li class="nav-item dropdown">
+                     <li>
+                        <hr class="dropdown-divider">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                        <ul class="dropdown-menu">
+                           <li><a class="dropdown-item " href="/pages/producto.html">Productos en Madera</a></li>
+                           <li><a class="dropdown-item " href="/pages/grabadoslaser.html">Grabados Láser</a></li>
+                           <li><a class="dropdown-item" href="/pages/mayorista.html">Mayorista</a></li>
+                           <li>
+                              <hr class="dropdown-divider">
+                           </li>
+                           <li><a class="dropdown-item" href="/pages/contacto.html">Contacto</a></li>
+                        </ul>
+                     <li>
+                        <hr class="collapse-divider text-white">
+                     </li>
+                  </ul>
+                  <form class="d-flex pe-3" role="search">
+                     <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search">
+                     <button class="btn btn-light" type="submit">Buscar</button>
+                  </form>
+                  <ul class="navbar-nav">
+                     <li>
+                        <hr class="collapse-divider text-white">
+                     </li>
+                     <li class="nav-item align-items-center">
+                        <a class="nav-link" href="/pages/login.html">Iniciar Sesión</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/pages/signup.html">Registarse</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
       </header>
       <main>
          <div class="container">
@@ -83,15 +84,36 @@
                         <label for="form_phone">Teléfono</label>
                         <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Teléfono">
                      </div>
-                     <div class="form-group pt-3 pb-1">
+                     <div class="form-group pt-3">
+                        <label class="form-password">Contraseña</label>
+                        <div class="input-group">
+                           <input class="form-control" id="password" type="password" name="password" placeholder="Contraseña"/>
+                           <span class="input-group-text">
+                           <i class="far fa-eye-slash" id="togglePassword"
+                              style="cursor: pointer"></i>
+                           </span>
+                        </div>
+                     </div>
+                     <!-- <div class="form-group pt-3 pb-1">
                         <label for="form_pass">Contraseña</label>
                         <input id="form_pass" type="password" name="pass" class="form-control" placeholder="Contraseña">
-                        <div class="form-group pt-3 pb-1">
-                           <label for="form_repass">Conformar Contraseña</label>
-                           <input id="form_repass" type="password" name="repass" class="form-control" placeholder="Confirmar Contraseña">
-                           <hr/>
+                        </div> -->
+                     <!-- <div class="form-group pt-2 pb-1">
+                        <label for="form_repass">Confirmar Contraseña</label>
+                        <input id="form_repass" type="password" name="repass" class="form-control" placeholder="Confirmar Contraseña">
+                        <hr/>
+                        </div> -->
+                     <div class="form-group pt-3 pb-5">
+                        <label class="form-password">Confirmar Contraseña</label>
+                        <div class="input-group mb-3">
+                           <input class="form-control" id="confirmedPassword" type="password" name="password" placeholder="Confirmar Contraseña"/>
+                           <span class="input-group-text">
+                           <i class="far fa-eye-slash" id="confirmedTogglePassword"
+                              style="cursor: pointer"></i>
+                           </span>
                         </div>
-                        <div class="d-grid">
+                        <hr/>
+                        <div class="d-grid pt-2">
                            <input type="submit" class="btn btn-outline-dark" value="Crear Cuenta">
                         </div>
                      </div>
