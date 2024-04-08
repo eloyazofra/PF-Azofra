@@ -1,0 +1,47 @@
+body {
+  font-family: "Encode Sans", sans-serif !important;
+}
+
+.deco a {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+
+#passwordHelpBlock a {
+  text-decoration: none;
+  color: grey;
+  font-weight: 300;
+}
+
+.card-title,
+.card-body {
+  text-align: center;
+}
+
+main {
+  min-height: 825px;
+}
+
+.filterprice {
+  width: 225px !important;
+}
+
+input[type=checkbox] {
+  border-color: grey !important;
+}
+input[type=checkbox]:checked {
+  background-color: black;
+  border-color: grey !important;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: black;
+  border-radius: 100px;
+}
+
+label {
+  margin-left: 2%;
+}
+
+/*# sourceMappingURL=main.css.map */
