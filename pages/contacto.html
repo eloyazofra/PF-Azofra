@@ -44,7 +44,7 @@
                      </li>
                   </ul>
                   <form class="d-flex pe-3" role="search">
-                     <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search">
+                     <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search" required minlength="0" maxlength="30">
                      <button class="btn btn-light" type="submit">Buscar</button>
                   </form>
                   <ul class="navbar-nav">
@@ -74,13 +74,13 @@
                            <div class="col-lg-6 mb-4">
                               <div class="form-group">
                                  <label for="form_name">Nombre</label>
-                                 <input id="form_name" type="text" name="name" class="form-control" placeholder="Nombre">
+                                 <input id="form_name" type="text" name="name" class="form-control" placeholder="Nombre" required minlength="0" maxlength="40">
                               </div>
                            </div>
                            <div class="col-lg-6 mb-4">
                               <div class="form-group">
                                  <label for="form_lastname">Apellido</label>
-                                 <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Apellido">
+                                 <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Apellido" required minlength="0" maxlength="40">
                               </div>
                            </div>
                         </div>
@@ -88,19 +88,19 @@
                            <div class="col-lg-6 mb-4">
                               <div class="form-group">
                                  <label for="form_email">Email</label>
-                                 <input id="form_email" type="email" name="email" class="form-control" placeholder="tumail@email.com">
+                                 <input id="form_email" type="email" name="email" class="form-control" placeholder="tumail@email.com" required minlength="0" maxlength="40">
                               </div>
                            </div>
                            <div class="col-lg-6 mb-4">
                               <div class="form-group">
                                  <label for="form_phone">Teléfono</label>
-                                 <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                                 <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone" required minlength="0" maxlength="40">
                               </div>
                            </div>
                         </div>
                         <div class="form-group mb-4">
                            <label for="form_message">Mensaje</label>
-                           <textarea id="form_message" name="message" class="form-control" placeholder="Escriba el mensaje que desea enviar" rows="8"></textarea>
+                           <textarea id="form_message" name="message" class="form-control" placeholder="Escriba el mensaje que desea enviar" rows="8" required minlength="0" maxlength="600"></textarea>
                         </div>
                         <input type="submit" class="btn btn-outline-dark mb-5" value="Enviar Mensaje">
                         <div class="row">
