@@ -1,0 +1,217 @@
+.card-mine-1,
+.card-mine-2,
+.card-mine-3,
+.card-mine-4,
+.card-mine-5,
+.card-mine-6,
+.card-mine-7,
+.card-mine-8,
+.card-mine-9 {
+  aspect-ratio: 1 / 0.7;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+
+  .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 90%;
+      border-radius: inherit;
+      transition: 0.5s ease-in-out;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .card-mine-1::after,
+  .card-mine-2::after,
+  .card-mine-3::after,
+  .card-mine-4::after,
+  .card-mine-5::after,
+  .card-mine-6::after,
+  .card-mine-7::after,
+  .card-mine-8::after,
+  .card-mine-9::after {
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    color: white;
+  }
+
+  .card-mine-1:hover img,
+  .card-mine-2:hover img,
+  .card-mine-3:hover img,
+  .card-mine-4:hover img,
+  .card-mine-5:hover img,
+  .card-mine-6:hover img,
+  .card-mine-7:hover img,
+  .card-mine-8:hover img,
+  .card-mine-9:hover img {
+    filter: grayscale(1) brightness(0.4);
+  }
+
+  .card-mine-1:hover::after,
+  .card-mine-2:hover::after,
+  .card-mine-3:hover::after,
+  .card-mine-4:hover::after,
+  .card-mine-5:hover::after,
+  .card-mine-6:hover::after,
+  .card-mine-7:hover::after,
+  .card-mine-8:hover::after,
+  .card-mine-9:hover::after {
+    opacity: 1;
+    inset: 20px;
+  }
+
+  .card-mine-1::after,
+  .card-mine-2::after,
+  .card-mine-3::after,
+  .card-mine-4::after,
+  .card-mine-5::after,
+  .card-mine-6::after,
+  .card-mine-7::after,
+  .card-mine-8::after,
+  .card-mine-9::after {
+    content: "Precio: \A $300 ";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card-mine-1::after,
+  .card-mine-2::after,
+  .card-mine-3::after,
+  .card-mine-4::after,
+  .card-mine-5::after,
+  .card-mine-6::after,
+  .card-mine-7::after,
+  .card-mine-8::after,
+  .card-mine-9::after {
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    color: white;
+  }
+
+  .card-mine-1:hover img,
+  .card-mine-2:hover img,
+  .card-mine-3:hover img,
+  .card-mine-4:hover img,
+  .card-mine-5:hover img,
+  .card-mine-6:hover img,
+  .card-mine-7:hover img,
+  .card-mine-8:hover img,
+  .card-mine-9:hover img {
+    filter: grayscale(1) brightness(0.4);
+  }
+
+  .card-mine-1:hover::after,
+  .card-mine-2:hover::after,
+  .card-mine-3:hover::after,
+  .card-mine-4:hover::after,
+  .card-mine-5:hover::after,
+  .card-mine-6:hover::after,
+  .card-mine-7:hover::after,
+  .card-mine-8:hover::after,
+  .card-mine-9:hover::after {
+    opacity: 1;
+    inset: 20px;
+  }
+
+  .card-mine-1::after {
+    content: "✨ Pintado con barniz poliuretánico.\A💡 Lámpara de 25w (Filamento de Carbono)\A 📏 Diámetro de la lámpara: 12cm\A♻ Realizado en madera recuperada.\A🔌 Cable textil a elección (consultar colores disponibles).\A🔛 Tecla en cable\A\APrecio:\A$300";
+    text-align: center;
+    padding-top: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-2::after {
+    content: "✨ Pintado con Cetol (apto exteriores)\A♻ Realizado en madera recuperada.\A 🌱 Podes decorar cualquier\A ambiente usando las latas que más \Ate gusten como macetas\A🔢 Disponibles para 4, 5 y 6 latas.\A🔩 Incluye tornillos y tarugos.\A\APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-3::after {
+    content: "🌡Luz Neutra (no cansa la vista)\A♻ Maderas: Pino, Nogal, Ébano y Wengue\A 🔌 Consumo: 5w\A✨Terminación: Aceite de Tung\A📏 Altura (en posición vertical): 41cm\A\APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-4::after {
+    content: "✨ Pintados con barniz poliuretánico.\A 🍺 Herraje de excelente calidad.\A ♻ Realizado en madera recuperada.\A 📏 28cm x 11cm.\A ♻Imán de neodimio, fuertísimo!\A 🔩 Incluye tarugo y tornillo.\A \APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-5::after {
+    content: "✨ Pintados con barniz poliuretánico.\A 🍺 Herraje de excelente calidad.\A ♻ Realizado en madera recuperada.\A 📏 28cm x 11cm.\A ♻Imán de neodimio, fuertísimo!\A 🔩 Incluye tarugo y tornillo.\A \APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-6::after {
+    content: "✨ Pintados con barniz poliuretánico.\A 🍺 Herraje de excelente calidad.\A ♻ Realizado en madera recuperada.\A 📏 28cm x 11cm.\A ♻Imán de neodimio, fuertísimo!\A 🔩 Incluye tarugo y tornillo.\A \APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-7::after {
+    content: "\A 📏 85cm x 40cm x 15cm (Cerrado)\A⤵️ Profundidad del escritorio abierto: 50cm \A ✨ Terminación en barniz poliuretanico\A  mate y brillante.\A ♻Imán de neodimio, fuertísimo!\A ♻ Realizado en madera recuperada.\A \APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-8::after {
+    content: "📏 35cm x 35cm x 50cm.\A📦 Cajon con corredera telescópica  \A 📦 Sale todo el cajón\A✨ Terminación en barniz MATE poliuretanico \A🛠️ Construida con madera de pallets \A desarmados, cepillados, y lijados. \A 🌳 Tapa de cajón en Eucalipto.\A \APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+
+  .card-mine-9::after {
+    content: "📏 120cm x 48cm x 42cm \A👆 Altura con mesa elevada: 58cm \A📦 Cajón lateral extraíble. \A ✨ Terminación en barniz poliuretanico\A🛠️ Pallets desarmados, cepillados, y lijados. \A🌳 Tabla superior de Eucalipto. \A \APrecio:\A$300";
+    text-align: center;
+    padding: 20%;
+    white-space: pre;
+    display: block;
+    justify-content: safe;
+  }
+}

@@ -1,4 +1,9 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Encode Sans", sans-serif !important;
 }
@@ -9,10 +14,8 @@ body {
   font-weight: 200;
 }
 
-#passwordHelpBlock a {
-  text-decoration: none;
-  color: grey;
-  font-weight: 300;
+main {
+  min-height: 750px;
 }
 
 .card-title {
@@ -22,27 +25,6 @@ body {
 
 .card-body {
   text-align: center;
-}
-
-main {
-  min-height: 750px;
-}
-
-.filterprice {
-  width: 225px !important;
-}
-
-input[type=checkbox] {
-  border-color: grey !important;
-}
-input[type=checkbox]:checked {
-  background-color: black;
-  border-color: grey !important;
-}
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: black;
-  border-radius: 100px;
 }
 
 label {
@@ -264,6 +246,28 @@ label {
     display: block;
     justify-content: safe;
   }
+}
+#passwordHelpBlock a {
+  text-decoration: none;
+  color: grey;
+  font-weight: 300;
+}
+
+.filterprice {
+  width: 225px !important;
+}
+
+input[type=checkbox] {
+  border-color: grey !important;
+}
+input[type=checkbox]:checked {
+  background-color: black;
+  border-color: grey !important;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: black;
+  border-radius: 100px;
 }
 
 /*# sourceMappingURL=main.css.map */
