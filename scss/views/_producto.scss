@@ -1,0 +1,20 @@
+.filterprice {
+    width: 225px !important;
+  }
+  
+  input {
+    &[type='checkbox'] {
+      &:checked {
+        background-color: black;
+        border-color: grey !important;
+      }
+  
+      border-color: grey !important;
+    }
+  
+    &[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: black;
+      border-radius: 100px;
+    }
+  }
