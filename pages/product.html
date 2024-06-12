@@ -76,37 +76,40 @@
                      <div class="col-md-6 container mb-5 filterprice">
                         <h5>Filtros</h5>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
-                           <label class="form-check-label" for="flexCheckChecked1"> Productos en madera </label>
-                        </div>
-                        <div class="form-check">
-                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked2" checked>
-                           <label class="form-check-label" for="flexCheckChecked2"> Muebles </label>
-                        </div>
-                        <div class="form-check">
-                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked3">
-                           <label class="form-check-label" for="flexCheckChecked3"> Grabados Laser </label>
-                        </div>
-                        <div class="form-check">
-                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4">
-                           <label class="form-check-label" for="flexCheckChecked4"> Mayorista </label>
-                        </div>
+                           <input class="form-check-input" type="checkbox" value="madera" id="filterMadera">
+                           <label class="form-check-label" for="filterMadera"> Productos en madera </label>
+                       </div>
+                       <div class="form-check">
+                           <input class="form-check-input" type="checkbox" value="muebles" id="filterMuebles">
+                           <label class="form-check-label" for="filterMuebles"> Muebles </label>
+                       </div>
+                       <div class="form-check">
+                           <input class="form-check-input" type="checkbox" value="laser" id="filterLaser">
+                           <label class="form-check-label" for="filterLaser"> Grabados Laser </label>
+                       </div>
+                       <div class="form-check mb-3">
+                           <input class="form-check-input" type="checkbox" value="mayorista" id="filterMayorista">
+                           <label class="form-check-label" for="filterMayorista"> Mayorista </label>
+                       </div>
+                       <div class="d-grid">
+                        <button class="btn btn-outline-dark" type="button" id="filterTypeButton">Filtrar</button>
+                    </div>
                      </div>
                      <div class="col-md-6 container filterprice">
                         <h5>Precio</h5>
-                        <label for="customRange1" class="form-label bg">Desde</label>
-                        <input type="range" class="form-range" id="customRange1">
-                        <label for="customRange2" class="form-label">Hasta</label>
-                        <input type="range" class="form-range" id="customRange2">
-                        <div class="d-grid">
-                           <button class="btn btn-outline-dark" type="button">Filtrar</button>
+                        <label for="priceMinInput" class="form-label bg">Desde: $</label>
+                        <input type="number" class="form-control" id="priceMinInput" min="0" max="2000" value="0">
+                        <label for="priceMaxInput" class="form-label">Hasta: $</label>
+                        <input type="number" class="form-control" id="priceMaxInput" min="0" max="2000" value="1100">
+                        <div class="d-grid mt-3">
+                            <button class="btn btn-outline-dark" type="button" id="filterPriceButton">Filtrar</button>
                         </div>
-                     </div>
+                    </div>
                   </div>
                </div>
                <div class="col-xl-10 pt-2 pb-2">
-                  <div class="card-group border border-1 text-center">
-                     <div class="card m-5 border-0">
+                  <div class="card-group border border-1 text-center" >
+                     <div class="card p-5 border-0 text-center" data-category="madera" data-price="300">
                         <img src="../img/products/velador.webp" class="card-img-top rounded" alt="velador">
                         <div class="card-body">
                            <h5 class="card-title">Velador</h5>
@@ -116,7 +119,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="card p-5 border-0  text-center">
+                     <div class="card p-5 border-0 text-center" data-category="madera"  data-price="400">
                         <img src="../img/products/baselatas.webp" class="card-img-top rounded" alt="basedelatas">
                         <div class="card-body">
                            <h5 class="card-title">Base Porta Latas</h5>
@@ -126,7 +129,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="card p-5 border-0 text-center">
+                     <div class="card p-5 border-0 text-center" data-category="madera"  data-price="500">
                         <img src="../img/products/veladerled.webp" class="card-img-top rounded" alt="veladorled">
                         <div class="card-body">
                            <h5 class="card-title">Velador Led</h5>
@@ -138,7 +141,7 @@
                      </div>
                   </div>
                   <div class="card-group border border-1 text-center">
-                     <div class="card p-5 border-0">
+                     <div class="card p-5 border-0" data-category="madera"  data-price="600">
                         <img src="../img/products/destapador.webp" class="card-img-top rounded" alt="destapador">
                         <div class="card-body">
                            <h5 class="card-title">Grabado Ubicación</h5>
@@ -148,7 +151,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="card p-5 border-0  text-center">
+                     <div class="card p-5 border-0  text-center" data-category="grabados"  data-price="700">
                         <img src="../img/products/grabadodestapador.webp" class="card-img-top rounded" alt="grabadolaser">
                         <div class="card-body">
                            <h5 class="card-title">Grabados Laser</h5>
@@ -158,7 +161,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="card p-5 border-0">
+                     <div class="card p-5 border-0" data-category="grabados"  data-price="800">
                         <img src="../img/products/grabadolaser2.webp" class="card-img-top rounded" alt="grabadolaser2">
                         <div class="card-body">
                            <h5 class="card-title">Grabados Laser</h5>
@@ -170,7 +173,7 @@
                      </div>
                   </div>
                   <div class="card-group border border-1 text-center">
-                     <div class="card p-5 border-0">
+                     <div class="card p-5 border-0" data-category="muebles"  data-price="900">
                         <img src="../img/products/escritoriorebatible.webp" class="card-img-top rounded" alt="escritorio">
                         <div class="card-body">
                            <h5 class="card-title">Escritorio Rebatible</h5>
@@ -180,7 +183,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="card p-5 border-0">
+                     <div class="card p-5 border-0" data-category="muebles"  data-price="1000">
                         <img src="../img/products/mesadeluz.webp" class="card-img-top rounded" alt="mesadeluz">
                         <div class="card-body">
                            <h5 class="card-title">Mesa de Luz</h5>
@@ -190,7 +193,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="card p-5 border-0">
+                     <div class="card p-5 border-0" data-category="muebles"  data-price="1100">
                         <img src="../img/products/mesaratona.webp" class="card-img-top rounded" alt="mesaratona">
                         <div class="card-body">
                            <h5 class="card-title">Mesa ratona Rebatible</h5>

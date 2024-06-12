@@ -270,4 +270,9 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 100px;
 }
 
+.card.custom-card {
+  max-width: 300px; /* Ancho máximo deseado para las tarjetas */
+  margin: auto; /* Centra la tarjeta horizontalmente */
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,52 @@
+///FILTROS PRECIO///
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('filterPriceButton').addEventListener('click', function() {
+        var minPrice = parseInt(document.getElementById('priceMinInput').value) || 0;
+        var maxPrice = parseInt(document.getElementById('priceMaxInput').value) || Infinity;
+        var cards = document.querySelectorAll('.card');
+
+        cards.forEach(function(card) {
+            var price = parseInt(card.getAttribute('data-price'));
+            if (price >= minPrice && price <= maxPrice) {
+                card.style.display = 'block';
+                card.style.width = '100%';
+                card.style.maxWidth = '488px'; 
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+///FILTROS TIPO///
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('filterTypeButton').addEventListener('click', function () {
+        let categories = [];
+        if (document.getElementById('filterMadera').checked) categories.push('madera');
+        if (document.getElementById('filterMuebles').checked) categories.push('muebles');
+        if (document.getElementById('filterLaser').checked) categories.push('grabados');
+        if (document.getElementById('filterMayorista').checked) categories.push('mayorista');
+
+        let card = document.querySelectorAll('.card');
+
+        card.forEach(card => {
+            let category = card.getAttribute('data-category');
+
+            if (categories.includes(category)) {
+                card.style.display = 'block';
+                card.style.width = '100%';
+                card.style.maxWidth = '488px'; 
+            } else {
+                card.style.display = 'none';
+            }
+        });   
+    });
+});
+
+///AGREGAR AL CARRITO//
+
 document.addEventListener('DOMContentLoaded', function() {
     let totalAmount = 0;
     const price = {
