@@ -270,9 +270,74 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 100px;
 }
 
-.card.custom-card {
-  max-width: 300px; /* Ancho máximo deseado para las tarjetas */
-  margin: auto; /* Centra la tarjeta horizontalmente */
+#cart-img {
+  height: 24px;
+}
+#cart-img:hover {
+  cursor: pointer;
+}
+
+#cart-container {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  width: 300px;
+}
+#cart-container h4 {
+  color: black;
+}
+
+#cart-list {
+  list-style-type: none;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-list li {
+  padding: 5px 0;
+}
+
+#finalize-purchase {
+  margin-top: 10px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#clear-cart {
+  margin-top: 10px;
+  width: 100%;
+  background-color: rgb(114, 9, 9);
+  color: white;
+  border: 1px rgb(114, 9, 9);
+  padding: 10px;
+}
+
+#finalize-purchase.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+#total-amount {
+  color: black;
+}
+
+#purchaseDetails {
+  white-space: pre-line; /* Permite el renderizado de saltos de línea en el texto */
+}
+
+#confirmPurchaseButton {
+  background-color: black;
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */
