@@ -14,59 +14,106 @@
       <link rel="stylesheet" type="text/css" href="/css/main.css">
       <script src="https://kit.fontawesome.com/95d16ae2c4.js" crossorigin="anonymous"></script>
       <script src="../js/cart.js"></script>
+      <script src="../js/filter.js"></script>
       <link rel="shortcut icon" href="/img/favicon.webp">
    </head>
    <body>
       <header>
-        <nav data-bs-theme="dark" class="navbar navbar-expand-lg  bg-black mb-2" >
-          <div class="container-fluid">
-             <a href="/index.html">
-             <img src="/img/photo-navbar.webp" alt="Imagen Logo Floki" width="80" height="40">
-             </a>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
-                   </li>
-                   <li class="nav-item"></li>
-                   <li class="nav-item dropdown"><li>
-                      <hr class="dropdown-divider">
-                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
-                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item " href="/pages/product.html">Productos en Madera</a></li>
-                      <li><a class="dropdown-item " href="/pages/laserEngravings.html">Grabados Láser</a></li>
-                      <li><a class="dropdown-item" href="/pages/wholesaler.html">Mayorista</a></li>
-                      <li>
-                         <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="/pages/contact.html">Contacto</a></li>
-                   </ul>
-                   <li>
-                      <hr class="collapse-divider text-white">
-                   </li>
-                </ul>
-                <form class="d-flex pe-3" role="search">
-                   <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search" required minlength="0" maxlength="30">
-                   <button class="btn btn-light" type="submit">Buscar</button>
-                </form>
-                <ul class="navbar-nav">
-                   <li>
-                      <hr class="collapse-divider text-white">
-                   </li>
-                   <li class="nav-item align-items-center">
-                      <a class="nav-link" href="/pages/login.html">Iniciar Sesión</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="/pages/signup.html">Registarse</a>
-                   </li>
-                </ul>
-             </div>
-          </div>
-       </nav>
+         <nav data-bs-theme="dark" class="navbar navbar-expand-lg bg-black mb-2">
+            <div class="container-fluid">
+                <a href="/index.html">
+                    <img src="/img/photo-navbar.webp" alt="Imagen Logo Floki" width="80" height="40">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item"></li>
+                        <li class="nav-item dropdown">
+                            <li>
+                                <hr class="dropdown-divider">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/pages/product.html">Productos en Madera</a></li>
+                                <li><a class="dropdown-item" href="/pages/laserEngravings.html">Grabados Láser</a></li>
+                                <li><a class="dropdown-item" href="/pages/wholesaler.html">Mayorista</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/pages/contact.html">Contacto</a></li>
+                            </ul>
+                            <li>
+                                <hr class="collapse-divider text-white">
+                            </li>
+                    </ul>
+                    <form class="d-flex pe-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Qué estás buscando?" aria-label="Search" required minlength="0" maxlength="30">
+                        <button class="btn btn-light" type="submit">Buscar</button>
+                    </form>
+                    <ul class="navbar-nav text-white">
+                        <li>
+                            <hr class="collapse-divider text-white">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/login.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/signup.html">Registrarse</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center justify-content-center position-relative">
+                            <img id="cart-img" src="../img/shopping_cart_white.webp" alt="Carrito de compras">
+                            <span id="cart-count">0</span>
+                            <div id="cart-container">
+                                <h4>Carrito de Compras</h4>
+                                <ul id="cart-list"></ul>
+                                <hr>
+                                <p id="total-amount"></p>
+                                <button id="finalize-purchase" class="btn btn-primary">Finalizar Compra</button>
+                                <button id="clear-cart" class="btn btn-primary">Eliminar Carrito</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
       </header>
+      <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="purchaseModalLabel">Finalizar Compra</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body">
+                     <p id="purchaseDetails"></p>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                     <button id="confirmPurchaseButton" type="button" class="btn btn-primary">Confirmar Compra</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="thankYouModalLabel">¡Gracias por tu compra!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <p id="thankYouDetails"></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="closeThankYouModalButton">Cerrar</button>
+              </div>
+          </div>
+      </div>
+  </div>
       <main>
          <h1 class="border-dark border-top border-bottom text-center">Productos</h1>
          <div class="container-fluid">
@@ -91,9 +138,6 @@
                            <input class="form-check-input" type="checkbox" value="mayorista" id="filterMayorista" checked>
                            <label class="form-check-label" for="filterMayorista"> Mayorista </label>
                        </div>
-                       <!-- <div class="d-grid">
-                        <button class="btn btn-outline-dark" type="button" id="filterTypeButton">Filtrar</button>
-                    </div> -->
                      </div>
                      <div class="col-md-6 container filterprice">
                         <h5>Precio</h5>
