@@ -174,6 +174,5 @@ document.addEventListener('DOMContentLoaded', function() {
         // Eliminar el event listener después de cerrar el modal de agradecimiento
         document.getElementById('closeThankYouModalButton').removeEventListener('click', handleCloseThankYouModal);
     }
-
     updateCart();
 });
