@@ -104,17 +104,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para manejar la confirmación de la compra
     function handleConfirmPurchase() {
-        orderNumber += 1; // Incrementar orderNumber al confirmar la compra
-        cartItems = {}; // Limpiar carrito
-        totalAmount = 0; // Reiniciar totalAmount
-        cartCount = 0; // Reiniciar contador de elementos en carrito
+        orderNumber += 1; 
+        cartItems = {}; 
+        totalAmount = 0;
+        cartCount = 0; 
         localStorage.clear();
         document.getElementById('cart-count').textContent = cartCount;
-        updateCart(); // Actualizar visualización del carrito
-        updateFinalizeButtonState(); // Actualizar estado del botón de finalizar compra
-        purchaseModal.hide(); // Ocultar modal de compra
-        showThankYouModal(orderNumber); // Mostrar modal de agradecimiento con el nuevo número de orden
-        // Eliminar el event listener después de manejar la compra
+        updateCart();
+        updateFinalizeButtonState(); 
+        purchaseModal.hide(); 
+        showThankYouModal(orderNumber);
         document.getElementById('confirmPurchaseButton').removeEventListener('click', handleConfirmPurchase);
     }
 
@@ -167,13 +166,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para manejar el cierre del modal de agradecimiento
     function handleCloseThankYouModal() {
         thankYouModal.hide();
-        // Aquí se debería cerrar el modal de purchaseModal si es necesario
         if (purchaseModal._isShown) {
             purchaseModal.hide();
         }
-        // Eliminar el event listener después de cerrar el modal de agradecimiento
         document.getElementById('closeThankYouModalButton').removeEventListener('click', handleCloseThankYouModal);
     }
-
     updateCart();
 });
