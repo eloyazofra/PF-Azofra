@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return response.json();
     })
     .then(products => {
-        console.log('Productos en el json:', products);
-
         // Event listeners para botones de agregar al carrito
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', () => {
