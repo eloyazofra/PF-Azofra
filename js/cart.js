@@ -4,74 +4,74 @@ document.addEventListener('DOMContentLoaded', function() {
     let totalAmount = JSON.parse(localStorage.getItem('totalAmount')) || 0;
     let cartCount = JSON.parse(localStorage.getItem('cart-count')) || 0;
 
-    const buttons = document.querySelectorAll('.add-to-cart');
     const cartContainer = document.getElementById('cart-container');
     const cartList = document.getElementById('cart-list');
     const totalAmountElement = document.getElementById('total-amount');
     const finalizePurchaseButton = document.getElementById('finalize-purchase');
     const clearCartButton = document.getElementById('clear-cart');
 
-    // Definición de la clase Product
-    class Product {
-        constructor(id, nombre, categoria, precio) {
-            this.id = id;
-            this.nombre = nombre;
-            this.categoria = categoria;
-            this.precio = precio;
-        }
-    }
-
-    // Definición de productos
-    const products = [
-        new Product('velador', 'Velador', 'madera', 300),
-        new Product('baseLatas', 'Base Para Latas', 'madera', 400),
-        new Product('veladorLed', 'Velador Led', 'madera', 500),
-        new Product('destapador', 'Destapador', 'madera', 600),
-        new Product('grabadolaser', 'Grabado Laser', 'grabados', 700),
-        new Product('grabadoLaser2', 'Grabado Laser', 'grabados', 800),
-        new Product('escritorioRebatible', 'Escritorio Rebatible', 'muebles', 900),
-        new Product('mesaDeLuz', 'Mesa De Luz', 'muebles', 1000),
-        new Product('mesaRatona', 'Mesa Ratona', 'muebles', 1100),
-    ];
-
     // Modales
-    var purchaseModal;
-    var thankYouModal;
+    let purchaseModal;
+    let thankYouModal;
 
-    // Event listeners para botones de agregar al carrito
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
+    // Cargar productos desde products.json
+    fetch('../data/products.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('No se encuentra el archivo en la ruta definida.');
+        }
+        return response.json();
+    })
+    .then(products => {
+        console.log('Productos en el json:', products);
 
-            let productId = button.getAttribute('id-product');
-            let product = products.find(p => p.id === productId);
-            
-            if (product) {
-                totalAmount += product.precio;
+        // Event listeners para botones de agregar al carrito
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                let productId = button.getAttribute('id-product');
+                let product = products.find(p => p.id === productId);
                 
-                if (cartItems[productId]) {
-                    cartItems[productId].cantidad++;
-                } else {
-                    cartItems[productId] = { ...product, cantidad: 1 };
+                if (product) {
+                    totalAmount += product.precio;
+                    
+                    if (cartItems[productId]) {
+                        cartItems[productId].cantidad++;
+                    } else {
+                        cartItems[productId] = { ...product, cantidad: 1 };
+                    }
+
+                    cartCount++;
+                    updateCart();
+                    updateFinalizeButtonState();
+                    localStorage.setItem('cart', JSON.stringify(cartItems));
+                    localStorage.setItem('totalAmount', totalAmount);
+                    localStorage.setItem('cart-count', cartCount);
                 }
-
-                cartCount++;
-                updateCart();
-                updateFinalizeButtonState();
-                localStorage.setItem('cart',JSON.stringify(cartItems));
-                localStorage.setItem('totalAmount',totalAmount);
-                localStorage.setItem('cart-count',cartCount);
-            }
+            });
         });
-    });
 
-    // Mostrar/ocultar carrito al hacer clic en el ícono del carrito
-    document.getElementById('cart-img').addEventListener('click', () => {
-        cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
+        // Función para actualizar el contenido del carrito
+        function updateCart() {
+            cartList.innerHTML = '';
+            for (let id in cartItems) {
+                let item = cartItems[id];
+                let listItem = document.createElement('li');
+                listItem.textContent = ` ${item.cantidad} x - ${item.nombre} - Precio: $${item.precio} `;
+                cartList.appendChild(listItem);
+            }
+            document.getElementById('cart-count').textContent = cartCount;
+            totalAmountElement.textContent = `Total: $${totalAmount}`;
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching products:', error);
     });
 
     // Event listener para el botón de finalizar compra
     finalizePurchaseButton.addEventListener('click', handleFinalizePurchase);
 
+    // Event listener manejar la eliminación del carrito
+    clearCartButton.addEventListener('click', handleClearCart);
 
     // Función para manejar la finalización de la compra
     function handleFinalizePurchase() {
@@ -79,20 +79,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const purchaseSummary = generateCartSummary();
             const purchaseDetailsElement = document.getElementById('purchaseDetails');
             purchaseDetailsElement.textContent = purchaseSummary;
-            var purchaseModalElement = document.getElementById('purchaseModal');
+            const purchaseModalElement = document.getElementById('purchaseModal');
             purchaseModal = new bootstrap.Modal(purchaseModalElement);
             purchaseModal.show();
-            
+
             // Manejar el evento de confirmación de compra
             document.getElementById('confirmPurchaseButton').addEventListener('click', handleConfirmPurchase);
         }
     }
 
-    // Event listener manejar la eliminación del carrito
-
-    clearCartButton.addEventListener('click', handleClearCart);
-    function handleClearCart(){
-        if (cartCount > 0){
+    // Función para manejar la eliminación del carrito
+    function handleClearCart() {
+        if (cartCount > 0) {
             cartItems = {}; // Limpiar carrito
             totalAmount = 0; // Reiniciar totalAmount
             cartCount = 0; // Reiniciar contador de elementos en carrito
@@ -133,27 +131,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para generar el resumen del carrito
     function generateCartSummary() {
         return Object.values(cartItems).map(item => ` ${item.cantidad}x - ${item.nombre} - Precio: $${item.precio}`).join('\n') + '\n\n' + `Total: $${totalAmount}`;
-
     }
 
     // Función para actualizar el estado del botón de finalizar compra
     function updateFinalizeButtonState() {
-        if (cartCount === 0) {
-            finalizePurchaseButton.disabled = true;
-            cartContainer.style.display = 'none';
-        } else {
-            finalizePurchaseButton.disabled = false;
-            cartContainer.style.display = 'block';
-        }
+        finalizePurchaseButton.disabled = cartCount === 0;
+        cartContainer.style.display = cartCount === 0 ? 'none' : 'block';
     }
-    updateFinalizeButtonState();
-    
+
     // Función para mostrar el modal de agradecimiento
     function showThankYouModal(orderNumber) {
         const thankYouDetailsElement = document.getElementById('thankYouDetails');
         thankYouDetailsElement.textContent = `¡Gracias por su compra!\n\nNúmero de orden de compra: ${orderNumber}`;
     
-        var thankYouModalElement = document.getElementById('thankYouModal');
+        const thankYouModalElement = document.getElementById('thankYouModal');
         thankYouModal = new bootstrap.Modal(thankYouModalElement);
     
         // Mostrar el modal de agradecimiento
@@ -166,10 +157,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para manejar el cierre del modal de agradecimiento
     function handleCloseThankYouModal() {
         thankYouModal.hide();
-        if (purchaseModal._isShown) {
+        if (purchaseModal && purchaseModal._isShown) {
             purchaseModal.hide();
         }
         document.getElementById('closeThankYouModalButton').removeEventListener('click', handleCloseThankYouModal);
     }
+
+    // Función inicial para actualizar el estado del botón de finalizar compra
+    updateFinalizeButtonState();
     updateCart();
 });
