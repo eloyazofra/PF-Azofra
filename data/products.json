@@ -1,0 +1,56 @@
+[
+    {
+        "id": "velador",
+        "nombre": "Velador",
+        "categoria": "madera",
+        "precio": 300
+    },
+    {
+        "id": "baseLatas",
+        "nombre": "Base Para Latas",
+        "categoria": "madera",
+        "precio": 400
+    },
+    {
+        "id": "veladorLed",
+        "nombre": "Velador Led",
+        "categoria": "madera",
+        "precio": 500
+    },
+    {
+        "id": "destapador",
+        "nombre": "Destapador",
+        "categoria": "madera",
+        "precio": 600
+    },
+    {
+        "id": "grabadolaser",
+        "nombre": "Grabado Laser",
+        "categoria": "grabados",
+        "precio": 700
+    },
+    {
+        "id": "grabadoLaser2",
+        "nombre": "Grabado Laser",
+        "categoria": "grabados",
+        "precio": 800
+    },
+    {
+        "id": "escritorioRebatible",
+        "nombre": "Escritorio Rebatible",
+        "categoria": "muebles",
+        "precio": 900
+    },
+    {
+        "id": "mesaDeLuz",
+        "nombre": "Mesa De Luz",
+        "categoria": "muebles",
+        "precio": 1000
+    },
+    {
+        "id": "mesaRatona",
+        "nombre": "Mesa Ratona",
+        "categoria": "muebles",
+        "precio": 1100
+    }
+]
